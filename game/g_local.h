@@ -1036,6 +1036,8 @@ struct edict_s
 	float		yaw_speed;
 	float		ideal_yaw;
 
+
+	// ARMOD function pointers below
 	float		nextthink;
 	void		(*prethink) (edict_t *ent);
 	void		(*think)(edict_t *self);
@@ -1064,7 +1066,7 @@ struct edict_s
 	int			viewheight;		// height above origin where eyesight is determined
 	int			takedamage;
 	int			dmg;
-	int			radius_dmg;
+	int			radius_dmg;		// ARMOD radius of damage
 	float		dmg_radius;
 	int			sounds;			//make this a spawntemp var?
 	int			count;
@@ -1109,5 +1111,8 @@ struct edict_s
 	// common data blocks
 	moveinfo_t		moveinfo;
 	monsterinfo_t	monsterinfo;
+
+	// ARMOD here is where you should put new variables
+	// game expects things to be in specific order, will break game otherwise
 };
 
