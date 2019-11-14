@@ -1131,6 +1131,9 @@ void SpawnItem (edict_t *ent, gitem_t *item)
 
 //======================================================================
 
+// ARMOD every item defined here, basically def file
+// Array is undefined
+
 gitem_t	itemlist[] = 
 {
 	{
