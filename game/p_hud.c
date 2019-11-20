@@ -380,6 +380,10 @@ void G_SetStats (edict_t *ent)
 	int			index, cells;
 	int			power_armor_type;
 
+	// ARMOD adding local variables for rangefinder
+	vec3_t		start, forward, end;
+	trace_t		tr;
+
 	//
 	// health
 	//
@@ -520,7 +524,23 @@ void G_SetStats (edict_t *ent)
 		ent->client->ps.stats[STAT_HELPICON] = 0;
 
 	ent->client->ps.stats[STAT_SPECTATOR] = 0;
-}
+
+	// ARMOD adding rangefinder
+	// traces line from viewpoint to position 8192 units ahead, seeing how far it goes
+	VectorCopy(ent->s.origin, start);
+	start[2] += ent->viewheight;
+	// give us forward viewing angle
+	AngleVectors(ent->client->v_angle, forward, NULL, NULL);
+	// multiply this by 88192, add it to the start position, store it in end
+	VectorMA(start, 8192, forward, end);
+	// performs trace and returns in trace_t struct
+	tr = gi.trace(start, NULL, NULL, end, ent, MASK_SHOT | CONTENTS_SLIME | CONTENTS_LAVA);
+	// check for sky and max the range if found, pretending it's real
+	if (tr.surface && (tr.surface->flags & SURF_SKY))
+		ent->client->ps.stats[STAT_RANGEFINDER] = 9999;
+	else
+		ent->client->ps.stats[STAT_RANGEFINDER] = (int)(tr.fraction * 8192);
+ }
 
 /*
 ===============

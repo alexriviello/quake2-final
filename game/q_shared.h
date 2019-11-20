@@ -1009,6 +1009,10 @@ typedef enum
 #define STAT_CHASE				16
 #define STAT_SPECTATOR			17
 
+
+// ARMOD adding rangefinder stat
+#define STAT_RANGEFINDER		16
+
 #define	MAX_STATS				32
 
 

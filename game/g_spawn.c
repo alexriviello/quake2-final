@@ -701,6 +701,15 @@ char *single_statusbar =
 "	xv	148 "
 "	pic	11 "
 "endif "
+
+// ARMOD adding rangefinder to screen
+"if 16 "
+"	xv	210 "
+"		num 4	16 "
+"	xy 234"
+"	yb -59 "
+"	string RANGE "
+"endif "
 ;
 
 char *dm_statusbar =
