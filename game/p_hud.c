@@ -158,7 +158,7 @@ void BeginIntermission (edict_t *targ)
 /*
 ==================
 DeathmatchScoreboardMessage
-
+ARMOD modify for Rocket Golf scorecard
 ==================
 */
 void DeathmatchScoreboardMessage (edict_t *ent, edict_t *killer)
