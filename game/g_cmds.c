@@ -19,6 +19,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 #include "g_local.h"
 #include "m_player.h"
+#include "throwup.h"  // ARMOD adding puke fucntion
 
 
 char *ClientTeam (edict_t *ent)
@@ -157,6 +158,15 @@ void Cmd_Give_f (edict_t *ent)
 	int			i;
 	qboolean	give_all;
 	edict_t		*it_ent;
+
+	// ARMOD adding throw up command
+
+	if (Q_stricmp(gi.argv(1), "throwup") == 0)
+	{
+		// throw up !
+		ThrowUpNow(ent);
+		return;
+	}
 
 	if (deathmatch->value && !sv_cheats->value)
 	{

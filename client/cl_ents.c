@@ -1170,7 +1170,9 @@ void CL_AddPacketEntities (frame_t *frame)
 				else											// PGM
 					V_AddLight (ent.origin, 200, 1, 1, 0);
 			}
-			else if (effects & EF_GIB)
+			else if (effects & EF_
+				
+				)
 			{
 				CL_DiminishingTrail (cent->lerp_origin, ent.origin, cent, effects);
 			}
