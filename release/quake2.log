@@ -1,10 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿Build started 11/19/2019 11:00:41 PM.
      1>Project "C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\quake2.vcxproj" on node 3 (Build target(s)).
 =======
 ﻿Build started 11/21/2019 4:21:08 PM.
      1>Project "C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\quake2.vcxproj" on node 2 (Build target(s)).
 >>>>>>> VomitAttack
+=======
+﻿Build started 11/13/2019 12:01:31 AM.
+     1>Project "C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\quake2.vcxproj" on node 3 (Build target(s)).
+>>>>>>> SonicRailgun
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1193,5): warning MSB8012: TargetPath(C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\..\Mods\quake2.exe) does not match the Linker's OutputFile property value (C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\release\quake2.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>Link:
@@ -63,7 +68,11 @@
 Build succeeded.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Time Elapsed 00:00:00.22
 =======
 Time Elapsed 00:00:00.64
 >>>>>>> VomitAttack
+=======
+Time Elapsed 00:00:00.49
+>>>>>>> SonicRailgun

@@ -765,7 +765,7 @@ void Weapon_RocketLauncher_Fire(edict_t *ent)
 	int		radius_damage;
 
 	damage = 100 + (int)(random() * 20.0);
-	radius_damage = 120;
+	radius_damage = 5000; // ARMOD from 120
 	damage_radius = 120;
 	if (is_quad)
 	{
@@ -794,6 +794,7 @@ void Weapon_RocketLauncher_Fire(edict_t *ent)
 
 	if (!((int)dmflags->value & DF_INFINITE_AMMO))
 		ent->client->pers.inventory[ent->client->ammo_index]--;
+	
 }
 
 void Weapon_RocketLauncher(edict_t *ent)
@@ -1304,9 +1305,10 @@ void weapon_railgun_fire(edict_t *ent)
 	vec3_t		start;
 	vec3_t		forward, right;
 	vec3_t		offset;
-	int			damage;
+	// ARMOD removing int			damage;
 	int			kick;
 
+	/* ARMOD removing
 	if (deathmatch->value)
 	{	// normal damage is too extreme in dm
 		damage = 100;
@@ -1317,10 +1319,31 @@ void weapon_railgun_fire(edict_t *ent)
 		damage = 150;
 		kick = 250;
 	}
+	*/
+
+	// ARMOD NEW SECTION
+	if (ent->client->buttons & BUTTON_ATTACK)
+	{
+		ent->SonicDamage + -10;
+		if (ent->SonicDamage > 250); // This is the maximum damage of the sonic rail
+		if (ent->SonicDamage == 240)
+			gi.sound(ent, CHAN_WEAPON, gi.soundindex("misc/comp_up.wav"), 1, ATTN_NONE, 0);
+		return;
+	}
+	if (ent->SonicDamage == 0)
+	{
+		ent->SonicDamage = 1;
+		return;
+	}
+	if (ent->SonicDamage == 0)
+		ent->SonicDamage = 70; // Sets minimum damage of the sonic rail
+	// ARMOD END SECTION
 
 	if (is_quad)
 	{
-		damage *= 4;
+	// ARMOD remove-	damage *= 4;
+		ent->SonicDamage *= 4; // ARMOD adding damage
+
 		kick *= 4;
 	}
 
@@ -1329,9 +1352,10 @@ void weapon_railgun_fire(edict_t *ent)
 	VectorScale(forward, -3, ent->client->kick_origin);
 	ent->client->kick_angles[0] = -3;
 
-	VectorSet(offset, 0, 7, ent->viewheight - 8);
-	P_ProjectSource(ent->client, ent->s.origin, offset, forward, right, start);
-	fire_rail(ent, start, forward, damage, kick);
+	VectorSet(offset, 0, 7,  ent->viewheight-8);
+	P_ProjectSource (ent->client, ent->s.origin, offset, forward, right, start);
+	// ARMOD REMOVING fire_rail (ent, start, forward, damage, kick);
+	fire_rail(ent, start, forward, ent->SonicDamage, kick); // ARMOD adding
 
 	// send muzzle flash
 	gi.WriteByte(svc_muzzleflash);
@@ -1344,6 +1368,7 @@ void weapon_railgun_fire(edict_t *ent)
 
 	if (!((int)dmflags->value & DF_INFINITE_AMMO))
 		ent->client->pers.inventory[ent->client->ammo_index]--;
+	ent->SonicDamage = 0; // ARMOD added
 }
 
 

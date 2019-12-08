@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿Build started 11/19/2019 11:00:41 PM.
+=======
+﻿Build started 11/13/2019 12:01:31 AM.
+>>>>>>> SonicRailgun
      1>Project "C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_soft\ref_soft.vcxproj" on node 5 (Build target(s)).
      1>CustomBuild:
          Performing Custom Build Tools
@@ -27,10 +31,10 @@
          Copyright (C) Microsoft Corporation.  All rights reserved.
          
          Performing Custom Build Tools
-          Assembling: C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_soft\r_scana.asm
          Microsoft (R) Macro Assembler Version 12.00.40629.0
          Copyright (C) Microsoft Corporation.  All rights reserved.
          
+          Assembling: C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_soft\r_scana.asm
          Performing Custom Build Tools
           Assembling: C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_soft\r_spr8.asm
          Microsoft (R) Macro Assembler Version 12.00.40629.0
@@ -75,4 +79,8 @@
 
 Build FAILED.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.65
+=======
+Time Elapsed 00:00:00.70
+>>>>>>> SonicRailgun

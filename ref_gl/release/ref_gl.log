@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿Build started 11/19/2019 11:00:41 PM.
+=======
+﻿Build started 11/13/2019 12:01:31 AM.
+>>>>>>> SonicRailgun
      1>Project "C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_gl\ref_gl.vcxproj" on node 4 (Build target(s)).
      1>Link:
          ref_gl.vcxproj -> C:\Users\Alex\Documents\GitHub\quake2-final\quake2-full\ref_gl\.\..\release\ref_gl.dll
@@ -6,4 +10,8 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.12
+=======
+Time Elapsed 00:00:00.37
+>>>>>>> SonicRailgun
